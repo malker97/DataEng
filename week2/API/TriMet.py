@@ -16,14 +16,23 @@ from bs4 import BeautifulSoup
 import json
 
 appid = '2B4A2694B832D6CDB45908BDB'
-locIDs = '7774,607,10293,10491,13305,7618,7773,616'
+locIDs = '607,13305,10491,5009,12763,7773,'
+
 s = requests.Session()
-url = f"https://developer.trimet.org/ws/v2/arrivals/locIDs/{locIDs}/7774/appid/{appid}"
-print(url)
+url = f"https://developer.trimet.org/ws/v2/arrivals/minutes/10/locIDs/{locIDs}/7774/appid/{appid}"
+# print(url)
 resp = s.get(url)
 soup = BeautifulSoup(resp.text,'html.parser')
 data = json.loads(str(soup))
-buses = []
-# print(data['resultSet']['detour'][0]['route'])
-# for detoure in data['resultSet']['detour']:
-#     print(detoure)
+# print(len(data['resultSet']['arrival']))
+buses = set()
+for bus in data['resultSet']['arrival']:
+    # The number of the direction, either 1 for inbound or 0 for outbound.
+    if bus['dir'] == 1:
+        buses.add(bus['vehicleID'])
+        print(bus['vehicleID'])
+    # print(bus['vehicleID'])
+# sorted(buses)
+print(f'{buses} will arrive PSU in 10 mins')
+print(f'Number of Arrival: {len(buses)}')
+
