@@ -50,6 +50,13 @@ we can use the `df['ARRIVE_TIME'].value_counts()` method to get  frequency.
 29139.0     19
 ```
 
-
+interpolate cant achieve this automatically, so we need set the index = liner
 
 Could you have used the **interpolate()** method for problem E above?
+
+we can use 
+
+```
+df = df.interpolate(method='linear', axis=0).ffill().bfill()
+```
+
