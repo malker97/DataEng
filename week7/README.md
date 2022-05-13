@@ -42,3 +42,7 @@ Least populous county in the USA?
 ​                  county  TotalCasesPer100K  TotalDeathsPer100K  NewPoverty 2903  Washington, Oregon      377110.358679          3925.21208   10.321202               county  TotalCasesPer100K  TotalDeathsPer100K  NewPoverty 1737  Malheur, Oregon       1.491187e+06        25541.566681   24.298225                 county  TotalCasesPer100K  TotalDeathsPer100K  NewPoverty 1677  Loudoun, Virginia       666505.58792          9563.27191    3.689598                county  TotalCasesPer100K  TotalDeathsPer100K  NewPoverty 1176  Harlan, Kentucky       747727.60273        14498.330187   35.669482
 
 ### D
+
+USA: CasesR: 0.1974387780893192. DeathR: 0.2680378406210281
+
+OR: CasesR: 0.28707860802137736. DeathR: 0.3605391158241332
